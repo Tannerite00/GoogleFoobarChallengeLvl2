@@ -1,0 +1,19 @@
+public class Solution {
+    public static int solution(String hallway) {
+		int salutes = 0;
+		
+		for(int i = 0; i < hallway.length(); i++) {
+			if(hallway.charAt(i) == '>') {
+				salutes += minionCount(hallway.substring(i+1));
+			}
+		
+	}
+		return salutes * 2;
+	}
+	
+
+
+	private static int minionCount(String substring) {
+		return substring.replaceAll("-", "").replaceAll(">","").length();
+	}
+}
